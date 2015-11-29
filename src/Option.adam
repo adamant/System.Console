@@ -1,0 +1,10 @@
+namespace System.Console
+{
+	public class Option
+	{
+	}
+	
+	public class Option<T>: Option
+	{
+	}
+}

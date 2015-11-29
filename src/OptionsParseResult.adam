@@ -1,0 +1,23 @@
+using System;
+
+namespace System.Console
+{
+	public class OptionsParseResult
+	{
+		public let Success: bool;
+		
+		public IsSet(option: Option) => bool
+		{
+			return false;
+		}
+		
+		public Value<T>(option: Option<T>) => T
+		{
+			throw new NotImplementedException();
+		}
+		
+		public WriteErrors(console: mut Console) => void
+		{
+		}
+	}
+}

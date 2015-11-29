@@ -1,0 +1,39 @@
+namespace System.Console
+{
+	public class Options
+	{
+		public AddOption(description: string, params names: string[]) => Option
+		{
+			return new Option();
+		}
+		
+		public AddOptionWithRequiredValue(description: string, params names: string[]) => Option<string>
+		{
+			return new Option<string>();
+		}
+		
+		public AddOptionWithOptionalValue(description: string, params names: string[]) => Option<string?>
+		{
+			return new Option<string?>();
+		}
+		
+		public AddOperand() => Option<string>
+		{
+			return new Option<string>();
+		}
+		
+		public AddOperandList() => Option<string[]>
+		{
+			return new Option<string[]>();
+		}
+		
+		public Parse(args: string[]) => OptionsParseResult
+		{
+			return new OptionsParseResult();
+		}
+		
+		/*public WriteOptions(writer: TextWriter) => void
+		{
+		}*/
+	}
+}
