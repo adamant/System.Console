@@ -6,7 +6,7 @@ namespace System.Console
 	{
 		public let Success: bool;
 		
-		public IsSet(option: Option) => bool
+		public IsSet<T>(option: Option<T>) => bool
 		{
 			return false;
 		}

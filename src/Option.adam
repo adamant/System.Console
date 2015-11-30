@@ -1,10 +1,35 @@
 namespace System.Console
 {
-	public class Option
+	public class Option<T>
 	{
-	}
-	
-	public class Option<T>: Option
-	{
+		public let HasValue: bool;
+		public let ValueIsRequired: bool;
+		public let ValueIsList: bool;
+		public let Description: string;
+
+		package new(description: string) => Option<void>
+		{
+			Description = description;
+		}
+
+		package new WithValue(description: string) => Option<string?>
+		{
+			HasValue = true;
+			Description = description;
+		}
+
+		package new WithRequiredValue(description: string) => Option<string>
+		{
+			HasValue = true;
+			ValueIsRequired = true;
+			Description = description;
+		}
+
+		package new WithListValue(description: string) => Option<string[]>
+		{
+			HasValue = true;
+			ValueIsList = true;
+			Description = description;
+		}
 	}
 }

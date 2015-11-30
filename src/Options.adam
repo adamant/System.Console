@@ -1,30 +1,37 @@
+using System.IO;
+
 namespace System.Console
 {
 	public class Options
 	{
-		public AddOption(description: string, params names: string[]) => Option
+		public AddOption(description: string, params names: string[]) => Option<void>
 		{
-			return new Option();
+			return new Option(description);
 		}
 		
 		public AddOptionWithRequiredValue(description: string, params names: string[]) => Option<string>
 		{
-			return new Option<string>();
+			return new Option.WithRequiredValue(description);
 		}
 		
 		public AddOptionWithOptionalValue(description: string, params names: string[]) => Option<string?>
 		{
-			return new Option<string?>();
+			return new Option.WithValue(description);
 		}
 		
-		public AddOperand() => Option<string>
+		public AddOperand() => Option<string?>
 		{
-			return new Option<string>();
+			return new Option.WithValue("");
+		}
+
+		public AddRequiredOperand(name: string) => Option<string>
+		{
+			return new Option.WithRequiredValue(name);
 		}
 		
 		public AddOperandList() => Option<string[]>
 		{
-			return new Option<string[]>();
+			return new Option.WithListValue("");
 		}
 		
 		public Parse(args: string[]) => OptionsParseResult
@@ -32,8 +39,9 @@ namespace System.Console
 			return new OptionsParseResult();
 		}
 		
-		/*public WriteOptions(writer: TextWriter) => void
+		public WriteOptions(writer: TextWriter) => void
 		{
-		}*/
+			throw new NotImplementedException();
+		}
 	}
 }
