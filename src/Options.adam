@@ -1,9 +1,12 @@
+using System.Collections;
 using System.IO;
 
 namespace System.Console
 {
 	public class Options
 	{
+		private let options: Dictionary<string, Option<any>>;
+
 		public AddOption(description: string, params names: string[]) => Option<void>
 		{
 			return new Option(description);

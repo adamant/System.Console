@@ -4,6 +4,7 @@
 	"template": "lib",
 	"dependencies":
 	{
-		"System": {}
+		"System": {},
+		"System.Collections": {}
 	}
 }
